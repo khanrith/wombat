@@ -1,6 +1,8 @@
+$:.unshift File.dirname(__FILE__)
+
 #coding: utf-8
-require 'wombat/property_container'
-require 'wombat/iterator'
+require 'property_container'
+require 'iterator'
 
 module Wombat
   class Metadata < PropertyContainer

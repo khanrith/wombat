@@ -1,5 +1,7 @@
+$:.unshift File.dirname(__FILE__)
+
 #coding: utf-8
-require 'wombat/node_selector'
+require 'node_selector'
 
 module Wombat
   module PropertyLocator

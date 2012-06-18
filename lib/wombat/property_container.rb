@@ -8,7 +8,7 @@ module Wombat
       @iterators = []
     end
 
-    def method_missing method, *args, &block
+    def method_missing method, *args, &block      
       if args.empty? && block
         self["#{method.to_s}"] = PropertyContainer.new unless self["#{method.to_s}"]
         block.call(self["#{method.to_s}"])
@@ -37,7 +37,7 @@ module Wombat
       }.compact
     end
 
-    def parse
+    def parse      
       all_properties.each do |p|
         result = yield p if block_given?
         p.result = p.callback ? p.callback.call(result) : result 

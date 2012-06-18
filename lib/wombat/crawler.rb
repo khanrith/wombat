@@ -1,7 +1,9 @@
+$:.unshift File.dirname(__FILE__)
+
 #coding: utf-8
-require 'wombat/metadata'
-require 'wombat/property'
-require 'wombat/parser'
+require 'metadata'
+require 'property'
+require 'parser'
 require 'active_support'
 require 'date'
 
@@ -10,7 +12,7 @@ module Wombat
     include Parser
     extend ActiveSupport::Concern
 
-    def crawl(&block)
+    def crawl(&block)      
       if block
         @metadata_dup = self.class.send(:metadata).clone
         instance_eval do
